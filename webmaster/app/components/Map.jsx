@@ -11,7 +11,7 @@ export default function Map() {
     const L = require("leaflet")
     const { OpenStreetMapProvider, GeoSearchControl } = require("leaflet-geosearch")
 
-    const map = L.map("map", { minZoom: 4 }).setView([0, 0], 13)
+    const map = L.map("map", { minZoom: 10 }).setView([0, 0], 13)
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map)
 
     let currentMarker;
@@ -23,8 +23,8 @@ export default function Map() {
         const userLocation = [latitude, longitude]
 
         map.setView(userLocation, 13)
-        currentMarker = L.marker(userLocation).addTo(map).bindPopup("You are here").openPopup()
-        L.circle(userLocation, { radius: 300, color: "blue", fillOpacity: 0.3 }).addTo(map)
+        currentMarker = L.marker(userLocation).addTo(map).bindPopup("Your location").openPopup()
+        L.circle(userLocation, { radius: 30000, color: "blue", fillOpacity: 0.1 }).addTo(map)
       })
     }
 
