@@ -770,6 +770,7 @@
   transition: transform 0.2s ease;
   align-items: center;
   text-decoration: none;
+  cursor: pointer;
 }
  
 .navigation-desktop-links {
@@ -809,6 +810,7 @@
   font-weight: var(--font-weight-medium);
   white-space: nowrap;
   text-decoration: none;
+  cursor: pointer;
 }
  
 .navigation-mobile-overlay {

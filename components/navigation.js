@@ -10,7 +10,7 @@ const Navigation = (props) => {
       <div className="navigation-container1">
         <nav className="navigation-wrapper">
           <div className="navigation-container">
-            <a href="Homepage">
+            <Link href="/">
               <div aria-label="NeighborsNest Home" className="navigation-brand">
                 <div className="navigation-logo-icon">
                   <svg
@@ -33,33 +33,33 @@ const Navigation = (props) => {
                 </div>
                 <span className="section-title">Neighbor's Nest</span>
               </div>
-            </a>
+            </Link>
             <div className="navigation-desktop-links">
-              <a href="Homepage">
+              <Link href="/directory">
                 <div className="navigation-link">
                   <span>Directory</span>
                 </div>
-              </a>
-              <a href="Homepage">
+              </Link>
+              <Link href="/events">
                 <div className="navigation-link">
                   <span>Events</span>
                 </div>
-              </a>
-              <a href="Homepage">
+              </Link>
+              <Link href="/support">
                 <div className="navigation-link">
                   <span>Support Services</span>
                 </div>
-              </a>
+              </Link>
               <Link href="/worklog">
                 <div className="navigation-link">
                   <span>Worklog</span>
                 </div>
               </Link>
-              <a href="Homepage">
+              <Link href="/suggest">
                 <div className="btn-sm btn-primary btn">
                   <span>Suggest Resource</span>
                 </div>
-              </a>
+              </Link>
             </div>
             <button
               id="navToggle"
@@ -87,7 +87,7 @@ const Navigation = (props) => {
         </nav>
         <div id="mobileOverlay" className="navigation-mobile-overlay">
           <div className="navigation-overlay-header">
-            <a href="Homepage">
+            <a href="/">
               <div aria-label="NeighborsNest Home" className="navigation-brand">
                 <div className="navigation-logo-icon">
                   <svg
@@ -135,29 +135,29 @@ const Navigation = (props) => {
           </div>
           <div className="navigation-overlay-content">
             <div className="navigation-overlay-links">
-              <a href="Homepage">
+              <a href="/">
                 <div className="navigation-overlay-link">
                   <span>Directory</span>
                 </div>
               </a>
-              <a href="Homepage">
+              <a href="/events">
                 <div className="navigation-overlay-link">
                   <span>Events</span>
                 </div>
               </a>
-              <a href="Homepage">
+              <a href="/support">
                 <div className="navigation-overlay-link">
                   <span>Support Services</span>
                 </div>
               </a>
-              <a href="Homepage">
+              <a href="/worklog">
                 <div className="navigation-overlay-link">
-                  <span>About Us</span>
+                  <span>Worklog</span>
                 </div>
               </a>
             </div>
             <div className="navigation-overlay-footer">
-              <a href="Homepage">
+              <a href="/suggest">
                 <div className="btn-lg btn-primary btn">
                   <span>Suggest a Resource</span>
                 </div>
