@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl'
 
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
+import Link from 'next/link'
 
 const Home = (props) => {
   return (
@@ -16,7 +17,6 @@ const Home = (props) => {
           <meta property="og:title" content="Frail Orderly Eland" />
           <link
             rel="canonical"
-            href="https://frail-orderly-eland-8t12rm.teleporthq.app/"
           />
         </Head>
         <Navigation></Navigation>
@@ -111,7 +111,8 @@ section {
                   data-form-field-id="thq_button_TBwx"
                   className="hero-search-btn btn-lg btn-primary btn"
                 >
-                  Find Resources
+                  <Link href="/directory">Find Resources</Link>
+                  
                 </button>
               </form>
               <div className="hero-quick-tags">
@@ -315,7 +316,7 @@ section {
               <div className="events-details">
                 <h3 className="events-title">Mental Health Workshop</h3>
                 <p className="section-content">
-                  A free session on stress management and local support networks
+                  A free session on stress management and support networks
                   for residents.
                 </p>
                 <div className="events-meta">
@@ -344,7 +345,7 @@ section {
           <div className="events-footer">
             <a href="#">
               <div className="btn-outline btn-lg btn">
-                <span>View All Events</span>
+                <span><Link href="/events">View All Events</Link></span>
               </div>
             </a>
           </div>
@@ -528,8 +529,8 @@ section {
                 </p>
               </div>
               <div className="cta-alert-actions">
-                <button id="openSuggestModal" className="btn-xl btn-accent btn">
-                  Suggest a Resource
+                <button className="btn-xl btn-accent btn">
+                  <Link href="/suggest">Suggest a Resource</Link>
                 </button>
               </div>
             </div>
@@ -618,80 +619,6 @@ section {
             </div>
           </div>
         </section>
-        <dialog id="suggestModal" className="suggest-dialog">
-          <div className="modal-header">
-            <h2 className="section-title">Suggest a Resource</h2>
-            <button id="closeSuggestModal" className="modal-close-btn">
-              &amp;times;
-            </button>
-          </div>
-          <form
-            action="/submit-resource"
-            method="POST"
-            data-form-id="7a69d3ae-dedb-41df-a780-b63b03fa2ad0"
-            className="modal-form"
-          >
-            <div className="form-group">
-              <label htmlFor="resName">Organization Name *</label>
-              <input
-                type="text"
-                id="resName"
-                name="resName"
-                required="true"
-                placeholder="e.g. Local Food Bank"
-                data-form-field-id="resName"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="resCat">Category *</label>
-              <select
-                id="resCat"
-                name="resCat"
-                required="true"
-                data-form-field-id="resCat"
-              >
-                <option value="true">Select a category</option>
-                <option value="food">Food &amp; Nutrition</option>
-                <option value="health">Healthcare</option>
-                <option value="education">Education</option>
-                <option value="housing">Housing</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="resDesc">Short Description *</label>
-              <textarea
-                id="resDesc"
-                name="resDesc"
-                required="true"
-                minlength="20"
-                placeholder="Tell us what they do..."
-                data-form-field-id="resDesc"
-              ></textarea>
-            </div>
-            <div className="form-group">
-              <label htmlFor="resLink">Website Link (if any)</label>
-              <input
-                type="url"
-                id="resLink"
-                name="resLink"
-                placeholder="https://..."
-                data-form-field-id="resLink"
-              />
-            </div>
-            <div className="modal-actions">
-              <button
-                id="thq_button_sHtI"
-                name="button"
-                type="submit"
-                data-form-field-id="thq_button_sHtI"
-                className="btn-lg btn-primary btn"
-              >
-                Submit Suggestion
-              </button>
-            </div>
-          </form>
-        </dialog>
         <div className="home-container4">
           <div className="home-container5">
             <Script
@@ -709,76 +636,6 @@ transform: translateY(0);}}
         </div>
         <div className="home-container6">
           <div className="home-container7">
-            <Script
-              html={`<script defer data-name="neighborsnest-logic">
-(function(){
-  // Modal Logic
-  const suggestModal = document.getElementById("suggestModal")
-  const openModalBtn = document.getElementById("openSuggestModal")
-  const closeModalBtn = document.getElementById("closeSuggestModal")
-
-  if (suggestModal && openModalBtn && closeModalBtn) {
-    openModalBtn.addEventListener("click", () => {
-      suggestModal.showModal()
-    })
-
-    closeModalBtn.addEventListener("click", () => {
-      suggestModal.close()
-    })
-
-    // Close on backdrop click
-    suggestModal.addEventListener("click", (e) => {
-      if (e.target === suggestModal) {
-        suggestModal.close()
-      }
-    })
-  }
-
-  // Smooth Horizontal Scroll for Rails (Optional UX enhancement)
-  const rails = document.querySelectorAll(".features-rail-container, .events-rail, .testimonials-rail")
-
-  rails.forEach((rail) => {
-    rail.addEventListener(
-      "wheel",
-      (evt) => {
-        if (evt.deltaY !== 0) {
-          evt.preventDefault()
-          rail.scrollLeft += evt.deltaY
-        }
-      },
-      { passive: false }
-    )
-  })
-
-  // Simple Form Validation Feedback
-  const forms = document.querySelectorAll("form")
-  forms.forEach((form) => {
-    form.addEventListener("submit", (e) => {
-      // Native validation handles the logic, we just provide a success hint for the demo
-      // In a real app, this would be handled after a successful fetch/post
-      const btn = form.querySelector('button[type="submit"]')
-      const originalText = btn.innerText
-
-      if (form.checkValidity()) {
-        btn.innerText = "Processing..."
-        btn.disabled = true
-
-        // This is just for visual feedback in this component
-        setTimeout(() => {
-          if (suggestModal.open) {
-            suggestModal.close()
-            alert("Thank you for your suggestion! We will review it shortly.")
-            form.reset()
-            btn.innerText = originalText
-            btn.disabled = false
-          }
-        }, 1500)
-      }
-    })
-  })
-})()
-</script>`}
-            ></Script>
           </div>
         </div>
         <Footer></Footer>

@@ -9,15 +9,15 @@
   --spacing-3xl: 3rem;
   --spacing-4xl: 4rem;
   --color-accent: #ffd93d;
-  --color-border: #e0ecea;
+  --color-border: #fdeded;
   --font-size-lg: clamp(1.0625rem, 0.98rem + 0.35vw, 1.125rem);
   --font-size-sm: clamp(0.8125rem, 0.74rem + 0.25vw, 0.875rem);
   --font-size-xl: clamp(1.25rem, 1.16rem + 0.6vw, 1.5rem);
   --font-size-xs: clamp(0.6875rem, 0.62rem + 0.2vw, 0.75rem);
-  --color-neutral: #e9f3f1;
-  --color-outline: #c7eae6;
+  --color-neutral: #ffeaea;
+  --color-outline: #f9c8c8;
   --color-overlay: color-mix(in oklab, #000000 40%, transparent);
-  --color-primary: #e85252;
+  --color-primary: #ca1616;
   --color-surface: #efefef;
   --divider-value: 2px solid var(--color-border);
   --font-size-2xl: clamp(1.5rem, 1.35rem + 0.9vw, 1.875rem);
@@ -28,14 +28,14 @@
   --shadow-level-2: 0 8px 24px rgba(255, 107, 107, 0.2);
   --shadow-level-3: 0 16px 40px rgba(255, 107, 107, 0.25);
   --color-backplate: color-mix(in oklab, #000000 55%, transparent);
-  --color-on-accent: #0f1a1c;
-  --color-secondary: #279987;
+  --color-on-accent: #120202;
+  --color-secondary: #a21515;
   --border-radius-lg: 24px;
   --border-radius-md: 16px;
   --border-radius-sm: 8px;
   --border-radius-xl: 32px;
   --color-on-primary: #ffffff;
-  --color-on-surface: #0f1a1c;
+  --color-on-surface: #120202;
   --font-family-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-weight-body: 400;
   --line-height-body: 1.6;
@@ -326,7 +326,7 @@
 .thq-flex-column {
   gap: var(--dl-layout-space-twounits);
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   align-items: center;
   flex-direction: column;
@@ -335,7 +335,7 @@
 .thq-flex-row {
   gap: var(--dl-layout-space-twounits);
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   align-items: center;
 }
@@ -438,7 +438,7 @@
 .thq-link {
   cursor: pointer;
   display: inline-block;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: linear-gradient(to right, var(--dl-color-theme-primary1) 50%, var(--dl-color-theme-neutral-dark) 50%);
   transition: background-position 300ms ease;
   font-weight: 600;
@@ -503,14 +503,14 @@
 .thq-animated-group-container-vertical {
   gap: var(--dl-layout-space-unit);
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; */
   flex-direction: column;
 }
  
 .thq-animated-group-container-horizontal {
   gap: var(--dl-layout-space-unit);
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
  
 .thq-mask-image-vertical {
@@ -546,7 +546,7 @@
 .thq-button-animated {
   outline: none;
   z-index: 1;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   border-width: 2px;
 }
@@ -943,7 +943,7 @@
  
 .footer-wrapper {
   color: var(--color-surface);
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   border-top: 8px solid var(--color-primary);
   padding-top: var(--spacing-4xl);
@@ -956,7 +956,7 @@
   padding: 0 var(--spacing-xl);
   z-index: 2;
   position: relative;
-  max-width: var(--content-max-width);
+  max-width: 80rem;
 }
  
 .footer-top {
@@ -1258,21 +1258,25 @@
  
 .features-rail-container {
   gap: var(--spacing-xl);
-  display: flex;
   padding: var(--spacing-xl) var(--spacing-4xl);
   overflow-x: auto;
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
  
 .features-card {
   flex: 0 0 350px;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: var(--color-surface);
   box-shadow: var(--shadow-level-1);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border-radius: var(--border-radius-lg);
   scroll-snap-align: center;
+  min-height: 40vh;
 }
  
 .features-card-image {
@@ -1323,6 +1327,9 @@
   padding: var(--spacing-xl) var(--spacing-4xl);
   overflow-x: auto;
   scrollbar-width: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
  
 .events-footer {
@@ -1548,6 +1555,9 @@
   padding: var(--spacing-xl) var(--spacing-4xl);
   overflow-x: auto;
   scrollbar-width: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
  
 .testimonial-card {
@@ -1997,7 +2007,7 @@ tr:nth-child(even) td {
   gap: 1rem;
 }
 
-.suggestForm input,
+.suggestForm input, select,
 .suggestForm textarea {
   width: 100%;
   padding: 0.75rem;

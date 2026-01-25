@@ -2,10 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/suggest": "pages/suggest.js",
   "/worklog": "pages/worklog.js",
   "/events": "pages/events.js",
   "/support": "pages/support.js",
-  "/directory": "pages/directory.js",
-  "/": "pages/index.js"
+  "/suggest": "pages/suggest.js",
+  "/": "pages/index.js",
+  "/directory": "pages/directory.js"
 }

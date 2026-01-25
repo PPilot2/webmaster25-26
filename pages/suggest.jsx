@@ -9,7 +9,20 @@ export default function Suggest() {
           <form action="" className="suggestForm">
             <section>
                 <input type="text" name="Name" placeholder="Name"/>
-                <input type="email" name="Email" placeholder="Email"/> 
+                <input type="email" name="Email" placeholder="Email"/>
+                <select
+                    id="resCat"
+                    name="resCat"
+                    required="true"
+                    data-form-field-id="resCat"
+                >
+                    <option value="true">Select a category</option>
+                    <option value="food">Food &amp; Nutrition</option>
+                    <option value="health">Healthcare</option>
+                    <option value="education">Education</option>
+                    <option value="housing">Housing</option>
+                    <option value="other">Other</option>
+                </select> 
             </section>
             <section>
                 <input type="text" name="Title" placeholder="Title of your suggestion"/>
