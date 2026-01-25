@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-
+import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
 const NotFound = (props) => {
@@ -18,6 +18,7 @@ const NotFound = (props) => {
           <h2 className="not-found-text3">
             WE ARE SORRY, BUT THE PAGE YOU REQUESTED WAS NOT FOUND
           </h2>
+        <h3><Link href="/">Home</Link></h3>
         </div>
       </div>
       <style jsx>

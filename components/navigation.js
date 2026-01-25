@@ -30,7 +30,7 @@ const Navigation = (props) => {
                     </g>
                   </svg>
                 </div>
-                <span className="section-title">NeighborsNest</span>
+                <span className="section-title">Neighbor's Nest</span>
               </div>
             </a>
             <div className="navigation-desktop-links">
@@ -49,9 +49,9 @@ const Navigation = (props) => {
                   <span>Support Services</span>
                 </div>
               </a>
-              <a href="Homepage">
+              <a href="Worklog">
                 <div className="navigation-link">
-                  <span>About Us</span>
+                  <span>Worklog</span>
                 </div>
               </a>
               <a href="Homepage">

@@ -12,7 +12,7 @@ const Home = (props) => {
     <>
       <div className="home-container1">
         <Head>
-          <title>Frail Orderly Eland</title>
+          <title>Neighbor's Nest</title>
           <meta property="og:title" content="Frail Orderly Eland" />
           <link
             rel="canonical"
