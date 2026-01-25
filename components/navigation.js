@@ -2,6 +2,7 @@ import React from 'react'
 
 import Script from 'dangerous-html/react'
 import { useTranslations } from 'next-intl'
+import Link from 'next/link'
 
 const Navigation = (props) => {
   return (
@@ -49,11 +50,11 @@ const Navigation = (props) => {
                   <span>Support Services</span>
                 </div>
               </a>
-              <a href="Worklog">
+              <Link href="/worklog">
                 <div className="navigation-link">
                   <span>Worklog</span>
                 </div>
-              </a>
+              </Link>
               <a href="Homepage">
                 <div className="btn-sm btn-primary btn">
                   <span>Suggest Resource</span>
