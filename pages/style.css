@@ -18,7 +18,7 @@
   --color-outline: #c7eae6;
   --color-overlay: color-mix(in oklab, #000000 40%, transparent);
   --color-primary: #e85252;
-  --color-surface: #ffffff;
+  --color-surface: #efefef;
   --divider-value: 2px solid var(--color-border);
   --font-size-2xl: clamp(1.5rem, 1.35rem + 0.9vw, 1.875rem);
   --font-size-3xl: clamp(2.25rem, 1.9rem + 1.6vw, 2.4rem);
@@ -1928,7 +1928,8 @@
 }
 
 /* worklog */
-.worklogContainer {
+
+.Container {
   max-width: 80%;
   margin: 0 auto;
   padding: 2rem;
@@ -1962,4 +1963,62 @@ th {
 
 tr:nth-child(even) td {
   background-color: #fafafa;
+}
+
+/* directory */
+
+/* suggestions */
+
+.Container {
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  width: 80vw;
+}
+
+
+.Container h1 {
+  margin-bottom: 1.5rem;
+}
+
+.suggestForm {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.suggestForm section {
+  display: flex;
+  gap: 1rem;
+}
+
+.suggestForm input,
+.suggestForm textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.suggestForm textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.suggestForm input[type="submit"] {
+  width: 100%;
+  background-color: var(--color-primary);
+  font-weight: bold;
+  color: #fff;
+}
+
+.suggestForm input[type="submit"]:hover {
+  background-color: var(--color-neutral);
+  color: #000;
 }

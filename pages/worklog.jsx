@@ -5,7 +5,7 @@ export default function Worklog() {
   return (
     <div>
       <Navigation></Navigation>
-      <main className="worklogContainer">
+      <main className="Container">
         <h1 className="worklogHeader">
           Technology Student Association Work Log
         </h1>

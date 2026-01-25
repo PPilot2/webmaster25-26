@@ -1,0 +1,13 @@
+import Navigation from "@/components/navigation"
+import Footer from "@/components/footer"
+export default function Directory() {
+  return (
+    <div>
+        <Navigation></Navigation>
+        <main className="Container">
+          <h1>Directory</h1>
+        </main>
+        <Footer></Footer>
+    </div>
+  )
+}
